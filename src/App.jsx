@@ -9,12 +9,22 @@ const App = () => {
       </div>
     )
   }
+  
+  const Part = (props) => {
+    console.log(props)
+    return (
+    <div>
+      <p>{props.name} : {props.excercises}</p>
+    </div>
+    )  
+  }
+
   const Content = () => {
     return (
       <div>
-        <p>Fundamentals of React : 10</p>
-        <p>Using props to pass data : 7</p>
-        <p>State of a component : 14</p>
+        <Part name='Fundamentals of React' excercises='10'/>
+        <Part name='Using props to pass data' excercises='7'/>
+        <Part name='State of a component' excercises='14'/>
       </div>
     )
   }
