@@ -4,18 +4,14 @@ const App = () => {
   const Header = () => {
     const course = 'Half Stack application development'
     return (
-      <div>
-        <p>{course}</p>
-      </div>
+      <h1>{course}</h1>
     )
   }
   
   const Part = (props) => {
     console.log(props)
     return (
-    <div>
       <p>{props.name} : {props.excercises}</p>
-    </div>
     )  
   }
 
