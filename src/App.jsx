@@ -34,12 +34,26 @@ const App = () => {
     setVoted(votesCopy)
   }
 
+  let maxVotes = 0
+  let maxIndex = -1
+
+  for (const [index, votes] of Object.entries(voted)) {
+    if (votes > maxVotes) {
+      maxVotes = votes
+      maxIndex = index
+    }
+  }
+
   return (
     <div>
+      <h2>Anecdote of the day</h2>
       <p>{anecdotes[selected]}</p>
       <p>has {voted[selected] ?? 0} votes</p>
       <Button handleClick= {() => handleVote(selected)} text="vote"/>
       <Button handleClick= {() => setSelected(getRandomInt())} text="next anecdote"/>
+      <h2>Anecdote with most votes</h2>
+      <p>{ maxIndex > -1 ? anecdotes[maxIndex] : '' }</p>
+      <p>has {maxVotes} votes</p>
     </div>
   )
 }
