@@ -19,6 +19,7 @@ const Content = (props) => {
       <Part name={props.course[0].name} exercises={props.course[0].exercises}/>
       <Part name={props.course[1].name} exercises={props.course[1].exercises}/>
       <Part name={props.course[2].name} exercises={props.course[2].exercises}/>
+      <b>total of {props.course[0].exercises + props.course[1].exercises + props.course[2].exercises} exercises</b>
     </div>
   )
 }
